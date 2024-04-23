@@ -427,11 +427,11 @@
 			});
 
 		$(".php .bar").circleProgress({
-			value: 0.60,
+			value: 0.65,
 		});
 
 		$(".react .bar").circleProgress({
-			value: 0.50,
+			value: 0.40,
 		});
 
 
