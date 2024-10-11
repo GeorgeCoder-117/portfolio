@@ -1,5 +1,19 @@
 (function () {
+		//Detectamos screen orientation
+	window.addEventListener("orientationchange", () => {
+		// if (screen.orientation.type.includes("landscape")) {
+		// 	location.reload();
+		// }
 
+		if (screen.orientation && screen.orientation.lock) {
+			screen.orientation.lock('landscape')
+			.catch(function() {
+			//   console.log('No se pudo bloquear la orientación');
+			  alert('No se pudo bloquear la orientación')
+			  location.reload();
+			});
+		  }
+	})
 	const showinfo = document.querySelector("#hide");
 
 	let maintemplate = ``;
