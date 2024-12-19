@@ -103,7 +103,7 @@
 				<div class="aboutme-grap left"></div>
 				<div class="aboutme-grap right"></div>
 				<div class="aboutme">
-					<p>Desarrollador web con casi 4 años de experiencia en el campo, front end y back end, apasionado por la tecnología.</p>
+					<p>Desarrollador web con casi 5 años de experiencia en el campo, front end y back end, apasionado por la tecnología.</p>
 				</div>
 			</div>			
 		</section>
@@ -234,8 +234,8 @@
 				</small>
 				<small class="info_lastProjects">Click abajo</small>
 				
-				<a class="little_company" target="_blank" href="https://gruas-tule.mx/"><b>Sitio web de gruas (Empresas pequeñas / locales)</b></a>
-				<a class="huge_company" target="_blank" href="https://scholastico.mx"><b>Sitio Web para empresas Nacionales / Multi nacionales</b></a>
+				<a class="little_company" target="_blank" href="https://gruas-tule.mx/"><b>Sitio web para pequeñas empresas</b></a>
+				<a class="huge_company" target="_blank" href="https://scholastico.mx"><b>Sitio Web para empresas Nacionales / Multinacionales</b></a>
 			</div>
 		</section>
 
@@ -275,7 +275,7 @@
 					<a href="#freelancer" class="btn">Freelancer</a>
 					<div class="experience">
 						<p>Desarrollador web</p>
-						<p><i class="uil uil-calendar-alt"></i> 2021- Julio 2021</p>
+						<p><i class="uil uil-calendar-alt"></i> Enero 2021- Agosto 2021</p>
 					</div>
 				</li>
 
