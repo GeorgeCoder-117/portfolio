@@ -166,7 +166,7 @@
 								<span></span>
 							</div>
 						</div>
-						<div class="txt_circle">REACT JS</div>
+						<div class="txt_circle">REACT JS / TYPESCRIPT</div>
 					</div>
 				</div>
 			</div>
@@ -441,7 +441,7 @@
 		let options = {
 			startAngle: -1.55,
 			size: 150,
-			value: 0.85,
+			value: 0.75,
 			fill: { color: "#00CBCE" }
 		}
 		$(".circle .bar").circleProgress(options).on('circle-animation-progress',
@@ -450,7 +450,7 @@
 			});
 
 		$(".php .bar").circleProgress({
-			value: 0.75,
+			value: 0.70,
 		});
 
 		$(".react .bar").circleProgress({
