@@ -385,13 +385,13 @@
 		// Para dispositivos táctiles
 		let touchZoomEnabled = false;
 
-		container.addEventListener('touchstart', function (e) {
-			if (window.innerWidth <= 768) {
-				touchZoomEnabled = !touchZoomEnabled;
-				image.style.transform = touchZoomEnabled ? 'scale(2)' : 'scale(1)';
-				e.preventDefault();
-			}
-		});
+		//container.addEventListener('touchstart', function (e) {
+			//if (window.innerWidth <= 768) {
+				//touchZoomEnabled = !touchZoomEnabled;
+				//image.style.transform = touchZoomEnabled ? 'scale(2)' : 'scale(1)';
+				//e.preventDefault();
+			//}
+		//});
 	}
 
 	// IMPROVEMENT WEB
