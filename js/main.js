@@ -279,7 +279,7 @@
 				divEnlacesAnchor[1].innerHTML = "<b>Web Link 2</b>";
 
 				let divInfoApp = document.querySelector("#infoApp");
-				divInfoApp.querySelector("small").innerHTML = "I'm also currently in charge of the new version of the Scholastico app developed with React Native, which I'm about to finish.";
+				divInfoApp.querySelector("small").innerHTML = "I'm also currently in charge of the new version of the Scholastico app developed with React Native, which I already finished it and the creation of a new app focus on our drivers.";
 
 				let experiences = document.querySelector("#myexperience");
 				experiences.querySelector("h1").innerHTML = "<h1>Experience</h1>";
