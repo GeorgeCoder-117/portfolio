@@ -1,0 +1,81 @@
+{   
+    "title": "Portafolio",
+    "navbar": [
+        {"main": "Inicio"},
+        {"skills": "Habilidades"},
+        {"portfolio": "Portafolio"},
+        {"experience": "Experiencia"},
+        {"knowledge": "Conocimientos"},
+        {"contact": "<i class='uil uil-envelope-exclamation'></i> Contacto</a>"}
+    ],
+    "welcome": "Hola ! <br> Mi nombre es Jorge <br> soy Ing. en Sistemas",
+    "btnWelcome": "<i class='uil uil-angle-double-right'></i> Empecemos",
+    "titleAboutMe": "Acerca de mí",
+    "descriptionAboutMe": "Desarrollador web y desarrollador de apps (React Native) con casi 5 años de experiencia en el campo, front end y back end, apasionado por la tecnología.",
+    "titleCertificates": "Certificados",
+    "titleSkills": "Habilidades",
+    "titlePortfolio": "Portafolio",
+    "subtitlePortfolio": "Estos son algunos de los proyectos que he desarrollado.",
+    "titleOtherProjects": "Otros proyectos realizados",
+    "otherProjectsLink1": "<b>Enlace 1</b>",
+    "otherProjectsLink2": "<b>Enlace 2</b>",
+    "currentProjectDescription": "Además actualmente estoy a cargo de una app de Viajes en la empresa Scholastico, desarrollada con React Native, finalizando con éxito la nueva versión, y de una nueva app para los operadores.",
+    "titleExperience": "Experiencia profesional",
+    "experiences": [
+        {
+            "company": "Atento",
+            "position": "Soporte técnico bilingüe",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2018-2019",
+            "description": "Brindé soporte técnico a clientes en inglés y español, resolviendo problemas relacionados con software y hardware para mejorar la experiencia del cliente."        
+        },
+        {
+            "company": "Cefodeh",
+            "position": "Desarrollador web y móvil junior",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2019 - 2020",
+            "description": "Desarrollar web y apps. Mejorando la experiencia del usuario e interfaz del usuario, además de crear dashboards para la gestión de datos."
+        },
+        {
+            "company": "Freelancer",
+            "position": "Desarrollador frontend",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2019 - 2021",
+            "description": "Trabajo independiente como desarrollador, colaborando con diversos clientes en proyectos de desarrollo de software personalizados."
+        },
+        {
+            "company": "Scholastico",
+            "position": "Desarrollador web fullstack y desarrollador móvil (React Native)",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2021 - Presente",
+            "description": "Responsable del desarrollo y mantenimiento de una aplicación de viajes utilizando React Native. Participación en la planificación y ejecución de nuevas funcionalidades para mejorar la experiencia del usuario. Además de crear una nueva app para los operadores, colaborando estrechamente con el equipo de diseño para garantizar la calidad y el rendimiento de las aplicaciones."
+        }
+    ],
+    "titleKnowledge": "Conocimientos",
+    "knowledges": [
+        {
+            "name": "Desarrollo web",
+            "description": "Experiencia en desarrollo web utilizando tecnologías como HTML5, CSS3, JavaScript, JQuery, React, Php y Node.js entre otras, para crear aplicaciones web interactivas."
+        },
+        {
+            "name": "Desarrollo de apps",
+            "description": "Experiencia en el desarrollo de aplicaciones móviles utilizando tecnologías como React Native y Expo, para crear experiencias de usuario innovadoras y funcionales."
+        },
+        {
+            "name": "Diseño web y móvil",
+            "description": "Conocimientos en diseño de interfaces y experiencia de usuario, con capacidad para crear interacciones intuitivas y atractivas."
+        },
+        {
+            "name": "Bases de datos",
+            "description": "Experiencia en la gestión y optimización de bases de datos, incluyendo diseño, implementación y mantenimiento."
+        }
+    ],
+    "titleFooter1": "Contacto",
+    "listFooter1": [
+        {"phone": "<i class='uil uil-outgoing-call'></i> Teléfono"},
+        {"email": "<i class='uil uil-envelope'></i> Correo electrónico"}
+    ],
+    "titleFooter2": "Accesos directos",
+    "listFooter2": [
+        {"skills": "Habilidades"},
+        {"portfolio": "Portafolio"},
+        {"experience": "Experiencia"},
+        {"knowledge": "Conocimientos"}
+    ]
+}

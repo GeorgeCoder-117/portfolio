@@ -5,12 +5,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
-	<title>Portafolio</title>
+	<title data-i18n="title"></title>
 
+	<!-- Icons -->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 	<!--=============== SWIPER CSS ===============-->
 	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<!-- Main CSS -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 
 <body>
@@ -56,19 +59,17 @@
 	</div>
 
 	<div class="wrapper">
-
 		<input type="checkbox" id="menu-toggle">
 		<header>
 			<h3>CV <i class="uil uil-user"></i></h3>
 			<div class="main-menu">
 				<ul>
-					<li><a href="#beginning">Inicio</a></li>
-					<li><a href="#myskills">Habilidades</a></li>
-					<li><a href="#myportfolio">Portafolio</a></li>
-					<li><a href="#myexperience">Experiencia</a></li>
-					<li><a href="#myknowledge">Conocimientos</a></li>
-					<li><a id="tocontact" href="#contactme"><i class="uil uil-envelope-exclamation"></i> Contacto</a>
-					</li>
+					<li><a href="#main" data-i18n="navbar.0.main"></a></li>
+					<li><a href="#myskills" data-i18n="navbar.1.skills"></a></li>
+					<li><a href="#myportfolio" data-i18n="navbar.2.portfolio"></a></li>
+					<li><a href="#myexperience" data-i18n="navbar.3.experience"></a></li>
+					<li><a href="#myknowledge" data-i18n="navbar.4.knowledge"></a></li>
+					<li><a id="tocontact" href="#contactme" data-i18n="navbar.5.contact"></a></li>
 				</ul>
 			</div>
 
@@ -79,12 +80,11 @@
 
 		<div class="me">
 			<div>
-				<h1>Hola ! <br> Mi nombre es Jorge <br> soy Ing. en Sistemas</h1>
-				<a id="beginning" href="#aboutmyself"><i class="uil uil-angle-double-right"></i> Empecemos</a>
+				<h1 data-i18n="welcome"></h1>
+				<a id="main" href="#aboutmyself" data-i18n="btnWelcome"></a>
 			</div>
 			<img class="profile" src="img/mee.jpg" alt="">
 		</div>
-
 	</div>
 
 	<div class="page-divide">
@@ -93,22 +93,19 @@
 	</div>
 
 	<div class="wrapper">
-
 		<section>
 			<div class="section-title" id="aboutmyself">
-				<h1>Acerca de mi</h1>
+				<h1 data-i18n="titleAboutMe"></h1>
 			</div>
 
 			<div class="aboutme-wrapper">
 				<div class="aboutme-grap left"></div>
 				<div class="aboutme-grap right"></div>
 				<div class="aboutme">
-					<p>Desarrollador web y desarrollador de apps (React Native) con casi 5 años de experiencia en el
-						campo, front end y back end, apasionado por la tecnología.</p>
+					<p data-i18n="descriptionAboutMe"></p>
 				</div>
 			</div>
 		</section>
-
 	</div>
 
 	<div class="page-divide">
@@ -116,17 +113,48 @@
 		<div class="divide-line left"></div>
 	</div>
 
-	<div class="slider-container">
-		<center>
-			<h1>Certificados</h1>
-		</center>
+
+
+
+
+	<!-- <div class="wrapper"> -->
+		<section>
+			<div class="section-title" id="aboutmyself">
+				<h1 data-i18n="titleCertificates"></h1>
+			</div>
+
+			<div class="select_container">
+				<select id="selectRoutine" name="selectRoutine" class="select_box">
+					<option value="1">Learn React Native</option>
+					<option value="2">Learn CSS: Responsive Design</option>
+					<option value="3">Building Interactive JavaScript Websites</option>
+					<option value="4">Software Design Principles</option>
+				</select>
+		
+				<div class="container_select_arrow_down">
+					<i id="arrowSelectBox" class="ri-arrow-down-s-fill"></i>
+				</div>
+			</div>
+		
+			<div class="container_certificates">
+				<canvas class="pdfCanvas" id="pdf-canvas"></canvas>				
+			</div>
+		</section>
+	<!-- </div> -->
+
+
+
+
+	<!-- <div class="slider-container">
+		<h1 class="titleCert" data-i18n="titleCertificates"></h1>
 		<br><br>
+
 		<div class="slider">
 			<div></div>
 			<div></div>
 			<div></div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="page-divide">
 		<div class="divide"></div>
@@ -137,7 +165,7 @@
 
 		<section>
 			<div class="section-title" id="myskills">
-				<h1>Habilidades</h1>
+				<h1 data-i18n="titleSkills"></h1>
 			</div>
 
 			<div class="container_skills">
@@ -188,20 +216,20 @@
 
 		<section>
 			<div class="section-title" id="myportfolio">
-				<h1>Portafolio</h1>
-				<small>Estos son algunos de los proyectos que he desarrollado.</small>
+				<h1 data-i18n="titlePortfolio"></h1>
+				<small data-i18n="subtitlePortfolio"></small>
 			</div>
 
 			<div class="portfolio__container swiper">
 				<div class="swiper-wrapper">
-					<article class="portfolio__card swiper-slide">
+					<!-- <article class="portfolio__card swiper-slide">
 						<img src="img/smartphone.png" alt="" class="portfolio__img">
 						<img src="img/webproject1_1.png" alt="" class="phone__img">
 					</article>
 					<article class="portfolio__card swiper-slide">
 						<img src="img/smartphone.png" alt="" class="portfolio__img">
 						<img src="img/webproject1_3.png" alt="" class="phone__img">
-					</article>
+					</article> -->
 					<article class="portfolio__card swiper-slide">
 						<img src="img/smartphone.png" alt="" class="portfolio__img">
 						<img src="img/cards2.png" alt="" class="phone__img cards">
@@ -214,10 +242,10 @@
 						<img src="img/smartphone.png" alt="" class="portfolio__img">
 						<img src="img/lp2.png" alt="" class="phone__img cards">
 					</article>
-					<article class="portfolio__card swiper-slide">
+					<!-- <article class="portfolio__card swiper-slide">
 						<img src="img/smartphone.png" alt="" class="portfolio__img">
 						<img src="img/webproject1_4.png" alt="" class="phone__img">
-					</article>
+					</article> -->
 
 				</div>
 
@@ -230,22 +258,24 @@
 			</div>
 
 			<div class="section-title" id="enlaces">
-				<h1>Últimos proyectos realizados</h1>
-				<a class="little_company" target="_blank" href="https://gruas-rojas.mx/"><b>Enlace 1</b></a>
-				<a class="huge_company" target="_blank" href="https://scholastico.mx"><b>Enlace 2</b></a>
+				<h1 data-i18n="titleOtherProjects"></h1>
+				<a class="little_company" target="_blank" href="https://gruas-rojas.mx/"
+					data-i18n="otherProjectsLink1"></a>
+				<a class="huge_company" target="_blank" href="https://scholastico.mx"
+					data-i18n="otherProjectsLink2"></a>
 			</div>
 
 			<div class="section-title" id="infoApp">
-				<small>Además actualmente estoy a cargo de una app de Viajes en la empresa Scholastico, desarrollada con React Native, finalizando con éxito la nueva versión, y de una nueva app para los operadores.</small>
+				<small data-i18n="currentProjectDescription"></small>
 			</div>
 		</section>
 
 	</div>
 
 	<div class="image-container">
-        <img id="zoom-image" src="img/appsch.png" alt="Imagen con efecto zoom" class="responsive-image">
-        <div class="zoom-lens"></div>
-    </div>
+		<img id="zoom-image" src="img/appsch.png" alt="Imagen con efecto zoom" class="responsive-image">
+		<div class="zoom-lens"></div>
+	</div>
 
 	<div class="page-divide">
 		<div class="divide"></div>
@@ -256,42 +286,43 @@
 
 		<section>
 			<div class="section-title" id="myexperience">
-				<h1>Experiencia profesional</h1>
+				<h1 data-i18n="titleExperience"></h1>
 			</div>
 
 			<div class="experience-wrapper">
 				<li class="item" id="atento">
-					<a href="#atento" class="btn">Atento</a>
+					<a href="#atento" class="btn" data-i18n="experiences.0.company"></a>
 					<div class="experience">
-						<p>Soporte técnico bilingüe</p>
-						<p><i class="uil uil-calendar-alt"></i> 2018-2019</p>
-						<p>Resultado Test en Inglés EFSET -> Link <a
-								href="http://links.t-educationfirst.mkt4686.com/servlet/MailView?ms=NTY0Mzg4NTES1&r=LTc3MTA5MDc1NzcS1&j=MTc2NDI3MjMxMgS2&mt"
-								target="_blank"><i class="uil uil-link-alt"></i></a></p>
+						<p data-i18n="experiences.0.position"></p>
+						<p data-i18n="experiences.0.duration"></p>
+						<p data-i18n="experiences.0.description"></p>
 					</div>
 				</li>
 
 				<li class="item" id="cefodeh">
-					<a href="#cefodeh" class="btn">Cefodeh</a>
+					<a href="#cefodeh" class="btn" data-i18n="experiences.1.company"></a>
 					<div class="experience">
-						<p>Desarrollador web junior y desarrollador de app junior</p>
-						<p><i class="uil uil-calendar-alt"></i> 2020-2021</p>
+						<p data-i18n="experiences.1.position"></p>
+						<p data-i18n="experiences.1.duration"></p>
+						<p data-i18n="experiences.1.description"></p>
 					</div>
 				</li>
 
 				<li class="item" id="freelancer">
-					<a href="#freelancer" class="btn">Freelancer</a>
+					<a href="#freelancer" class="btn" data-i18n="experiences.2.company"></a>
 					<div class="experience">
-						<p>Desarrollador web</p>
-						<p><i class="uil uil-calendar-alt"></i> 2021- Julio 2021</p>
+						<p data-i18n="experiences.2.position"></p>
+						<p data-i18n="experiences.2.duration"></p>
+						<p data-i18n="experiences.2.description"></p>
 					</div>
 				</li>
 
 				<li class="item" id="scholastico">
-					<a href="#scholastico" class="btn">Scholastico</a>
+					<a href="#scholastico" class="btn" data-i18n="experiences.3.company"></a>
 					<div class="experience">
-						<p>Desarrollador Web Full Stack y desarrollador de apps (React Native)</p>
-						<p><i class="uil uil-calendar-alt"></i> Agosto 2021-Actualidad 2025</p>
+						<p data-i18n="experiences.3.position"></p>
+						<p data-i18n="experiences.3.duration"></p>
+						<p data-i18n="experiences.3.description"></p>
 					</div>
 				</li>
 			</div>
@@ -308,35 +339,35 @@
 
 		<section>
 			<div class="section-title" id="myknowledge">
-				<h1>Conocimientos</h1>
+				<h1 data-i18n="titleKnowledge"></h1>
 			</div>
 
 			<div class="service-grid">
 				<div class="service">
-					<h3>Desarrollo Web</h3>
+					<h3 data-i18n="knowledges.0.name"></h3>
 					<span><i class="uil uil-arrow"></i> <i class="uil uil-html5"></i> <i
 							class="uil uil-css3-simple"></i>
 						<i class="uil uil-java-script"></i></span>
-					<p>Enfocado en dar una agradable experiencia de usuario, e interfaz de usuario intuitiva.</p>
+					<p data-i18n="knowledges.0.description"></p>
 				</div>
 
 				<div class="service">
-					<h3>Desarrollo de Apps</h3>
+					<h3 data-i18n="knowledges.1.name"></h3>
 					<span><i class="uil uil-apple"></i> <i class="uil uil-android"></i></span>
-					<p>Apps multiplataforma que funcionan tanto en Android como en iOS.</p>
+					<p data-i18n="knowledges.1.description"></p>
 				</div>
 
 				<div class="service">
-					<h3>Desarrollo de Apis</h3>
-					<span><i class="uil uil-wifi-router"></i> <i class="uil uil-modem"></i></span>
-					<p>Creación de paquetes de datos para su consumo tanto en app como en web.</p>
+					<h3 data-i18n="knowledges.2.name"></h3>
+					<span><i class="ri-smartphone-line"></i> <i class="ri-macbook-line"></i></i></span>
+					<p data-i18n="knowledges.2.description"></p>
 				</div>
 
 				<div class="service">
-					<h3>Soporte Técnico a equipos</h3>
+					<h3 data-i18n="knowledges.3.name"></h3>
 					<span><i class="uil uil-windows"></i> <i class="uil uil-desktop"></i> <i
 							class="uil uil-mouse-alt-2"></i></span>
-					<p>Mantenimiento preventivo y correctivo de computadoras así como limpieza y fluidez del S.O.</p>
+					<p data-i18n="knowledges.3.description"></p>
 				</div>
 			</div>
 		</section>
@@ -348,25 +379,27 @@
 
 			<div class="footer-grid" id="contactme">
 				<div class="links">
-					<h3>Contacto</h3>
+					<h3 data-i18n="titleFooter1"></h3>
 					<ul>
-						<li><a id="callme" href="tel:+525576578841"><i class="uil uil-outgoing-call"></i> Llámame</a>
+						<li>
+							<a id="callme" href="tel:+525576578841" data-i18n="listFooter1.0.phone"></a>
 						</li>
-						<li><a id="emailme" href="mailto:geeorge_13@hotmail.com"><i class="uil uil-envelope-edit"></i>
-								E-mail</a></li>
+						<li>
+							<a id="emailme" href="mailto:geeorge_13@hotmail.com" data-i18n="listFooter1.1.email"></a>
+						</li>
 					</ul>
 					<br>
-					<a href="sms:+525576578841" class="btn-sms"><i class="uil uil-comment-alt-lines"></i> Envíame un
-						SMS</a>
+					<!-- <a href="sms:+525576578841" class="btn-sms"><i class="uil uil-comment-alt-lines"></i> Envíame un
+						SMS</a> -->
 				</div>
 
 				<div class="links">
-					<h3>Accesos directos</h3>
+					<h3 data-i18n="titleFooter2"></h3>
 					<ul>
-						<li><a href="#beginning">Inicio</a></li>
-						<li><a href="#myskills">Habilidades</a></li>
-						<li><a href="#myportfolio">Portafolio</a></li>
-						<li><a href="#myknowledge">Conocimientos</a></li>
+						<li><a href="#myskills" data-i18n="listFooter2.0.skills"></a></li>
+						<li><a href="#myportfolio" data-i18n="listFooter2.1.portfolio"></a></li>
+						<li><a href="#myexperience" data-i18n="listFooter2.2.experience"></a></li>
+						<li><a href="#myknowledge" data-i18n="listFooter2.3.knowledge"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -374,23 +407,16 @@
 		</div>
 	</footer>
 
-
-	<!-- ENLACE A URL MANDILES -->
-	<!-- <small id="webproject"><a href="https://mandiles.epizy.com/main" target="_blank"><i class="uil uil-location-arrow"></i><i class="uil uil-globe"></i></a></small> -->
-
-
 	<!-- LAST JQUERY -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-
 	<!-- CIRCLE PROGRESS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
-
 	<!--=============== SWIPER JS ===============-->
-	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>	
+	<!-- PDF JS  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs" type="module"></script>
 
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/scroll.js"></script>
-
+	<script type="module" src="js/main.js"></script>
 </body>
 
 </html>
