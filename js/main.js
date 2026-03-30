@@ -32,6 +32,7 @@ let langBtn = document.querySelector(".language-btn");
 let langActive = "es";
 
 langBtn.addEventListener('click', () => {
+	langBtn.querySelector("p").textContent = langActive === "es" ? "EN" : "ES";
 	langActive = langActive === "es" ? "en" : "es";
 	i18next.changeLanguage(langActive, (err, t) => {
 		if (err) return console.error('Error cambiando idioma:', err);
@@ -95,7 +96,7 @@ async function renderPDF(pdfLib, url) {
 
     // 3. Renderizado
     await page.render(renderContext).promise;
-    console.log('Renderizado exacto completado sin espacios extra.');
+    // console.log('Renderizado exacto completado sin espacios extra.');
 }
 
 

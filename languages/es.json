@@ -23,28 +23,28 @@
     "titleExperience": "Experiencia profesional",
     "experiences": [
         {
-            "company": "Atento",
-            "position": "Soporte técnico bilingüe",
-            "duration": "<i class='uil uil-calendar-alt'></i> 2018-2019",
-            "description": "Brindé soporte técnico a clientes en inglés y español, resolviendo problemas relacionados con software y hardware para mejorar la experiencia del cliente."        
+            "company": "Scholastico",
+            "position": "Desarrollador web fullstack y desarrollador móvil (React Native)",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2021 - Presente",
+            "description": "Responsable del desarrollo y mantenimiento de una aplicación de viajes utilizando React Native. Participación en la planificación y ejecución de nuevas funcionalidades para mejorar la experiencia del usuario. Además de crear una nueva app para los operadores, colaborando estrechamente con el equipo de diseño para garantizar la calidad y el rendimiento de las aplicaciones."
+        },
+        {
+            "company": "Freelancer",
+            "position": "Desarrollador frontend",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2020 - 2021",
+            "description": "Trabajo independiente como desarrollador frontend, colaborando con diversos clientes en proyectos de desarrollo de sitios web y web apps personalizados."
         },
         {
             "company": "Cefodeh",
             "position": "Desarrollador web y móvil junior",
             "duration": "<i class='uil uil-calendar-alt'></i> 2019 - 2020",
-            "description": "Desarrollar web y apps. Mejorando la experiencia del usuario e interfaz del usuario, además de crear dashboards para la gestión de datos."
+            "description": "Desarrollo de sitios web y web apps. Mejorando la experiencia del usuario e interfaz del usuario, además de crear dashboards para la gestión de datos."
         },
         {
-            "company": "Freelancer",
-            "position": "Desarrollador frontend",
-            "duration": "<i class='uil uil-calendar-alt'></i> 2019 - 2021",
-            "description": "Trabajo independiente como desarrollador, colaborando con diversos clientes en proyectos de desarrollo de software personalizados."
-        },
-        {
-            "company": "Scholastico",
-            "position": "Desarrollador web fullstack y desarrollador móvil (React Native)",
-            "duration": "<i class='uil uil-calendar-alt'></i> 2021 - Presente",
-            "description": "Responsable del desarrollo y mantenimiento de una aplicación de viajes utilizando React Native. Participación en la planificación y ejecución de nuevas funcionalidades para mejorar la experiencia del usuario. Además de crear una nueva app para los operadores, colaborando estrechamente con el equipo de diseño para garantizar la calidad y el rendimiento de las aplicaciones."
+            "company": "Atento",
+            "position": "Soporte técnico bilingüe",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2018-2019",
+            "description": "Brindé soporte técnico a clientes en inglés y español, resolviendo problemas relacionados con software y hardware para mejorar la experiencia del cliente."        
         }
     ],
     "titleKnowledge": "Conocimientos",
