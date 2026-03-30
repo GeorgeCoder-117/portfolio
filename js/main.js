@@ -1,3 +1,148 @@
+// En versiones modernas (v4+), PDF.js se maneja preferentemente como módulo ES
+import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs';
+
+// Traducción con librería i18next
+import i18next from 'https://cdn.jsdelivr.net/npm/i18next/+esm';
+import es from '../languages/es.json' with { type: 'json' };
+import en from '../languages/en.json' with { type: 'json' };
+
+// 1. Inicializar i18next
+i18next.init({
+	lng: 'es', // Idioma por defecto
+	debug: true,
+	resources: {
+		es: { translation: es },
+		en: { translation: en }
+	}
+}, function (err, t) {
+	if (err) return console.error('Error cargando traducciones:', err);
+	updateContent();
+});
+
+// 2. Función para actualizar el DOM
+function updateContent() {
+	document.querySelectorAll('[data-i18n]').forEach(el => {
+		const key = el.getAttribute('data-i18n');
+		el.innerHTML = i18next.t(key);
+	});
+}
+
+// 3. Manejar el cambio de idioma
+let langBtn = document.querySelector(".language-btn");
+let langActive = "es";
+
+langBtn.addEventListener('click', () => {
+	langActive = langActive === "es" ? "en" : "es";
+	i18next.changeLanguage(langActive, (err, t) => {
+		if (err) return console.error('Error cambiando idioma:', err);
+		updateContent();
+	});
+});
+
+// Funcionalidad Select Pdf Certificates
+
+// Configurar el worker (DEBE coincidir la versión con la librería principal)
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.worker.min.mjs';
+//Renderizamos 1° certificado desde el inicio
+renderPDF(pdfjsLib, "./pdf/ReactNativeIntermediate.pdf");
+
+//Select Pdf Certificate
+let selectOptions = document.querySelector('#selectRoutine');
+selectOptions.addEventListener('change', () => {
+	let opcionSelected = selectOptions.value;
+
+	if (opcionSelected === "1") {
+		renderPDF(pdfjsLib, "./pdf/ReactNativeIntermediate.pdf");
+	} else if (opcionSelected === "2") {
+		renderPDF(pdfjsLib, "./pdf/CssResponsiveDesign.pdf");
+	} else if (opcionSelected === "3") {
+		renderPDF(pdfjsLib, "./pdf/BuildingJavaScriptWebsite.pdf");
+	} else if (opcionSelected === "4") {
+		renderPDF(pdfjsLib, "./pdf/SoftwareDesignPrinciples.pdf");
+	}
+});
+
+async function renderPDF(pdfLib, url) {
+    const loadingTask = pdfLib.getDocument(url);
+    const pdf = await loadingTask.promise;
+    const page = await pdf.getPage(1);
+
+    // 1. Definimos la escala (puedes ajustarla a 1.0, 1.5, etc.)
+    const scale = 1.5; 
+    const viewport = page.getViewport({ scale: scale });
+
+    // 2. Preparamos el Canvas
+    const canvas = document.getElementById('pdf-canvas');
+    const context = canvas.getContext('2d');
+
+// 1. Limpiamos cualquier rastro previo en el buffer
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    // 2. Asignamos dimensiones (Esto reinicia el canvas internamente)
+    canvas.width = Math.floor(viewport.width);
+    canvas.height = Math.floor(viewport.height);
+
+    // 3. Forzamos fondo blanco (Para eliminar las ondas/cuadrícula si el PDF es transparente)
+    context.fillStyle = "white";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    const renderContext = {
+        canvasContext: context,
+        viewport: viewport,
+        // Intentar renderizar solo el contenido visible si el PDF tiene bordes extra
+        intent: 'display' 
+    };
+
+    // 3. Renderizado
+    await page.render(renderContext).promise;
+    console.log('Renderizado exacto completado sin espacios extra.');
+}
+
+
+
+// function renderPDF(pdfLib, url) {
+// 	pdfLib.getDocument(url).promise.then(pdf => {
+// 		// 3. Renderizar la primera página
+// 		pdf.getPage(1).then(page => {
+// 			const scale = 1.5;
+// 			const viewport = page.getViewport({ scale });
+
+// 			const canvas = document.getElementById('pdf-canvas');
+// 			const context = canvas.getContext('2d');
+// 			canvas.height = viewport.height;
+// 			canvas.width = viewport.width;
+
+// 			const renderContext = {
+// 				canvasContext: context,
+// 				viewport: viewport
+// 			};
+// 			page.render(renderContext);
+// 		});
+// 	}).catch(err => {
+//         console.error('Error al cargar el PDF: ', err);
+//     });
+// }
+
+$(document).ready(function(){
+	$('.scroll-up').hide();
+
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 300){ //this --> esta ventana .. scrollTop -->posicion arriba de la ventana 100-->pixeles de arriba a abajo
+			$('.scroll-up').show('1000'); //fadeIn -->mostrar de nuevo
+		}
+
+		else {
+			$('.scroll-up').hide('1000'); // fadeOut -->  desaparezca  1000 --> efecto de aparición en tiempo
+		}
+	});
+
+	$('.scroll-up').click(function(){
+		$('body, html').animate({
+			scrollTop: 0 //Para que regrese al Inicio de arriba
+		},200); // 200 velocidad de efecto hacia arriba
+	});
+});
+
 (function () {
 	//Detectamos screen orientation
 	window.addEventListener("orientationchange", () => {
@@ -76,15 +221,6 @@
 		});
 
 		// SKILL Function
-
-		// $(function(){
-		//   	    $("#skillcircle-1").percircle({progressBarColor: '#00CBCE'});
-		//   	    $("#skillcircle-2").percircle({progressBarColor: '#00CBCE'});
-		//   	    $("#skillcircle-3").percircle({progressBarColor: '#00CBCE'});
-		//   	    $("#skillcircle-4").percircle({progressBarColor: '#00CBCE'});
-		//   	});
-
-		// NEW SKILL Function
 		let options = {
 			startAngle: -1.55,
 			size: 150,
@@ -103,45 +239,6 @@
 		$(".react .bar").circleProgress({
 			value: 0.60,
 		});
-
-
-
-
-
-		// CERT SLIDER FUNCTION
-
-		let slider1 = document.querySelector(".slider div:nth-child(1)");
-		let slider2 = document.querySelector(".slider div:nth-child(2)");
-		let slider3 = document.querySelector(".slider div:nth-child(3)");
-
-		slider2.style.display = "none";
-		slider3.style.display = "none";
-
-		let sliderInterval = window.setInterval(changeSlider, 6000);
-
-		function changeSlider() {
-
-			if (slider2.style.display == "none" && slider3.style.display == "none") {
-				slider1.style.display = "none";
-				slider2.style.display = "block";
-			}
-
-			else if (slider2.style.display == "block") {
-				slider3.style.display = "block";
-				slider2.style.display = "none";
-			}
-
-			else if (slider3.style.display == "block") {
-				slider1.style.display = "block";
-				slider3.style.display = "none";
-			}
-
-			// else if (slider2.style.display == "block") {
-			// 	slider1.style.display = "block";
-			// 	slider2.style.display = "none";
-			// }
-
-		}
 
 		//PORTFOLIO SWIPER FUNCTION
 		var swiper = new Swiper(".portfolio__container", {
@@ -188,7 +285,7 @@
 			});
 		}
 
-		/*=============== SCROLL SECTIONS ACTIVE LINK FOR BOTH BAR MENUS ===============*/
+		/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 		const sections = document.querySelectorAll('section .section-title');
 		// console.log(sections);
 
@@ -203,7 +300,7 @@
 
 					if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
 						// console.log(sectionId);
-						if (sectionId === "myportfolio" || sectionId === "myexperience") {
+						if (sectionId === "myportfolio" || sectionId === "myexperience" || sectionId === "myknowledge") {
 							if (header.className.includes("showing")) {
 								header.className = "";
 							}
@@ -220,127 +317,7 @@
 		}
 		window.addEventListener('scroll', scrollActive);
 
-		// CHANGE LANGUAGE
 
-		let langBtn = document.querySelector(".language-btn");
-
-		let langBtnActive = 0;
-
-		langBtn.addEventListener('click', () => {
-
-			if (langBtnActive == 0) {
-
-				langBtn.innerHTML = "<i class='uil uil-globe' style='color:#FFFFFF;'></i> <p>ES</p>";
-				langBtn.style = "background-color: #00CBCE; border: solid 3px #FFFFFF;";
-
-				let mainmenu = document.querySelector(".main-menu");
-				let Ulmainmenu = mainmenu.firstChild.nextSibling;
-
-				Ulmainmenu.querySelector("li:nth-child(1)").innerHTML = "<a href='#beginning'>Main</a>";
-				Ulmainmenu.querySelector("li:nth-child(2)").innerHTML = "<a href='#myskills'>Skills</a>";
-				Ulmainmenu.querySelector("li:nth-child(3)").innerHTML = "<a href='#myportfolio'>Portfolio</a>";
-				Ulmainmenu.querySelector("li:nth-child(4)").innerHTML = "<a href='#myexperience'>Experience</a>";
-				Ulmainmenu.querySelector("li:nth-child(5)").innerHTML = "<a href='#myknowledge'>Knowledge</a>";
-				Ulmainmenu.querySelector("li:nth-child(6)").innerHTML = "<a href='#contactme'><i class='uil uil-envelope-exclamation'></i> Contact</a>";
-
-				let me = document.querySelector(".me");
-				let Divme = me.firstChild.nextSibling;
-
-				Divme.querySelector("h1:nth-child(1)").innerHTML =
-					"<h1 style='font-size:2.8rem; line-height: 4.2rem;'>Hi ! <br> My name is Jorge <br> I'm a computer <br> systems engineer</h1>";
-
-				Divme.querySelector("a").innerHTML =
-					"<a id='beginning' href='#aboutmyself'><i class='uil uil-angle-double-right'></i> Let's go!</a>";
-
-				//me.querySelector("img").style = "width: 20vw;";
-
-				let aboutMyself = document.querySelector("#aboutmyself");
-				aboutMyself.querySelector("h1").innerHTML = "<h1>About me</h1>";
-
-				let aboutMee = document.querySelector(".aboutme");
-				aboutMee.querySelector("p").innerHTML =
-					"<p>Web developer and React Native app developer with almost 5 years of experience on the field, front end and back end , I love coding.</p>";
-
-				let certificate = document.querySelector(".slider-container");
-				certificate.querySelector("h1").innerHTML = "Certificates";
-
-				let mySkills = document.querySelector("#myskills");
-				mySkills.querySelector("h1").innerHTML = "<h1>Web skills</h1>";
-
-				let myPortfolio = document.querySelector("#myportfolio");
-				myPortfolio.querySelector("h1").innerHTML = "<h1>Portfolio</h1>";
-				let myPortfolioSmall = myPortfolio.getElementsByTagName("small");
-				myPortfolioSmall[0].innerHTML = "Here are some projects that I've developed";
-
-				let divEnlaces = document.querySelector("#enlaces");
-				divEnlaces.querySelector("h1").innerHTML = "<h1>Last projects done</h1>";
-				let divEnlacesAnchor = divEnlaces.getElementsByTagName("a");
-				divEnlacesAnchor[0].innerHTML = "<b>Web Link 1</b>";
-				divEnlacesAnchor[1].innerHTML = "<b>Web Link 2</b>";
-
-				let divInfoApp = document.querySelector("#infoApp");
-				divInfoApp.querySelector("small").innerHTML = "I'm also currently in charge of the new version of the Scholastico app developed with React Native, which I already finished it and the creation of a new app focus on our drivers.";
-
-				let experiences = document.querySelector("#myexperience");
-				experiences.querySelector("h1").innerHTML = "<h1>Experience</h1>";
-
-				let jobs = document.querySelectorAll(".experience");
-				jobs[0].querySelector("p:nth-child(1)").innerHTML = "Bilingual technical support";
-				jobs[0].querySelector("p:nth-child(3)").innerHTML =
-					"English Test EFSET Result -> Link <a href='http://links.t-educationfirst.mkt4686.com/servlet/MailView?ms=NTY0Mzg4NTES1&r=LTc3MTA5MDc1NzcS1&j=MTc2NDI3MjMxMgS2&mt' target='_blank'><i class='uil uil-link-alt'></i></a>";
-				jobs[1].querySelector("p:nth-child(1)").innerHTML = "Junior web developer and Junior App developer";
-				jobs[2].querySelector("p:nth-child(1)").innerHTML = "Web developer";
-				jobs[2].querySelector("p:nth-child(2)").innerHTML = "<i class='uil uil-calendar-alt'></i> 2021-July 2021";
-				jobs[3].querySelector("p:nth-child(1)").innerHTML = "Full stack web developer and React Native app developer";
-				jobs[3].querySelector("p:nth-child(2)").innerHTML = "<i class='uil uil-calendar-alt'></i> August 2021-Today";
-
-				let myknowledge = document.querySelector("#myknowledge");
-				myknowledge.querySelector("h1").innerHTML = "<h1>Knowledge</h1>";
-
-				let serviceDiv = document.querySelectorAll(".service");
-				serviceDiv[0].querySelector("h3").innerHTML = "<h3>Web development</h3>";
-				serviceDiv[0].querySelector("p").innerHTML = "<p>Focused on giving a nice user experience and awesome intuitive user interface.</p>";
-				serviceDiv[1].querySelector("h3").innerHTML = "<h3>App development</h3>";
-				serviceDiv[1].querySelector("p").innerHTML = "<p>Multiplatform apps that works well in Android and iOS.</p>";
-				serviceDiv[2].querySelector("h3").innerHTML = "<h3>Api development</h3>";
-				serviceDiv[2].querySelector("p").innerHTML = "<p>Data packages to use in apps and webs.</p>";
-				serviceDiv[3].querySelector("h3").innerHTML = "<h3>Technical support</h3>";
-				serviceDiv[3].querySelector("p").innerHTML = "<p>Preventive and corrective maintenance of your desktop computer or laptop, as well as smooth O.S.</p>";
-
-				let contactMeDiv = document.querySelectorAll(".links");
-
-				contactMeDiv[0].querySelector("h3").innerHTML = "<h3>Contact</h3>";
-
-				let contactMeDiv1Ul = contactMeDiv[0].querySelector("ul");
-				contactMeDiv1Ul.querySelector("li:nth-child(1)").innerHTML =
-					"<li><a id='callme' href='tel:+525576578841'><i class='uil uil-outgoing-call'></i> Call me!</a></li>";
-				document.querySelector(".btn-sms").innerHTML =
-					"<a href='sms:+525576578841' class='btn-sms'><i class='uil uil-comment-alt-lines'></i> Send me a SMS</a>";
-
-				contactMeDiv[1].querySelector("h3").innerHTML = "<h3>Shortcuts</h3>";
-
-				let contactMeDiv2Ul = contactMeDiv[1].querySelector("ul");
-				contactMeDiv2Ul.querySelector("li:nth-child(1)").innerHTML =
-					"<li><a href='#beginning'>Main</a></li>";
-				contactMeDiv2Ul.querySelector("li:nth-child(2)").innerHTML =
-					"<li><a href='#myskills'>Skills</a></li>";
-				contactMeDiv2Ul.querySelector("li:nth-child(3)").innerHTML =
-					"<li><a href='#myportfolio'>Portfolio</a></li>";
-				contactMeDiv2Ul.querySelector("li:nth-child(4)").innerHTML =
-					"<li><a href='#myknowledge'>Knowledge</a></li>";
-
-
-				langBtnActive = 1;
-
-			}
-
-			else if (langBtnActive == 1) {
-
-				location.reload();
-
-			}
-
-		});
 
 		//FUNCIONALIDAD IMG RESPONSIVA CON ZOOM
 		const image = document.getElementById('zoom-image');
@@ -386,11 +363,11 @@
 		let touchZoomEnabled = false;
 
 		//container.addEventListener('touchstart', function (e) {
-			//if (window.innerWidth <= 768) {
-				//touchZoomEnabled = !touchZoomEnabled;
-				//image.style.transform = touchZoomEnabled ? 'scale(2)' : 'scale(1)';
-				//e.preventDefault();
-			//}
+		//if (window.innerWidth <= 768) {
+		//touchZoomEnabled = !touchZoomEnabled;
+		//image.style.transform = touchZoomEnabled ? 'scale(2)' : 'scale(1)';
+		//e.preventDefault();
+		//}
 		//});
 	}
 

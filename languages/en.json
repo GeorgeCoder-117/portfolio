@@ -1,0 +1,81 @@
+{   
+    "title": "Portfolio",
+    "navbar": [
+        {"main": "Main"},
+        {"skills": "Skills"},
+        {"portfolio": "Portfolio"},
+        {"experience": "Experience"},
+        {"knowledge": "Knowledge"},
+        {"contact": "<i class='uil uil-envelope-exclamation'></i> Contact"}
+    ],
+    "welcome": "Hi ! <br> My name is Jorge <br> I'm a computer <br> systems engineer,",
+    "btnWelcome": "<i class='uil uil-angle-double-right'></i> Let's get started",
+    "titleAboutMe": "About Me",
+    "descriptionAboutMe": "Web developer and mobile app developer (React Native) with almost 5 years of experience in the field, frontend and backend, passionate about technology.",
+    "titleCertificates": "Certificates",
+    "titleSkills": "Skills",
+    "titlePortfolio": "Portfolio",
+    "subtitlePortfolio": "These are some of the projects I have developed.",
+    "titleOtherProjects": "Other projects completed",
+    "otherProjectsLink1": "<b>Link 1</b>",
+    "otherProjectsLink2": "<b>Link 2</b>",
+    "currentProjectDescription": "In addition, I am currently in charge of a Travel app at Scholastico, developed with React Native, successfully finishing the new version, and a new app for the operators.",
+    "titleExperience": "Professional Experience",
+    "experiences": [
+        {
+            "company": "Atento",
+            "position": "Bilingual technical support",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2018 - 2019",
+            "description": "I provided technical support to customers in English and Spanish, resolving software and hardware related issues to improve the customer experience."        
+        },
+        {
+            "company": "Cefodeh",
+            "position": "Junior web and mobile developer",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2019 - 2020",
+            "description": "Web development and apps. Collaboration in the design, improving the user experience and user interface, as well as creating dashboards for data management."
+        },
+        {
+            "company": "Freelancer",
+            "position": "Frontend Developer",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2019 - 2021",
+            "description": "Independent work as a developer, collaborating with various clients on customized software development projects."
+        },
+        {
+            "company": "Scholastico",
+            "position": "Fullstack Web Developer and Mobile Developer (React Native)",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2021 - Today",
+            "description": "Responsible for the development and maintenance of a travel application using React Native. Participation in the planning and execution of new features to improve the user experience. In addition to creating a new app for the operators, collaborating closely with the design team to ensure the quality and performance of the applications."
+        }
+    ],
+    "titleKnowledge": "Knowledge",
+    "knowledges": [
+        {
+            "name": "Web Development",
+            "description": "Experience in web development using technologies such as HTML5, CSS3, JavaScript, JQuery, React, Php and Node.js among others, to create interactive web applications."
+        },
+        {
+            "name": "App Development",
+            "description": "Experience in developing mobile applications using technologies such as React Native with Expo, to create innovative and functional user experiences."
+        },
+        {
+            "name": "Web and Mobile Design",
+            "description": "Knowledge in interface design and user experience, with the ability to create intuitive and attractive interactions."
+        },
+        {
+            "name": "Database Management",
+            "description": "Experience in the management and optimization of databases, including design, implementation and maintenance."
+        }
+    ],
+    "titleFooter1": "Contact",
+    "listFooter1": [
+        {"phone": "<i class='uil uil-outgoing-call'></i>  Phone"},
+        {"email": "<i class='uil uil-envelope-alt'></i> Email"}
+    ],
+    "titleFooter2": "Shortcuts",
+    "listFooter2": [
+        {"skills": "Skills"},
+        {"portfolio": "Portfolio"},
+        {"experience": "Experience"},
+        {"knowledge": "Knowledge"}
+    ]
+}
