@@ -8,7 +8,7 @@
         {"knowledge": "Knowledge"},
         {"contact": "<i class='uil uil-envelope-exclamation'></i> Contact"}
     ],
-    "welcome": "Hi ! <br> My name is Jorge <br> I'm a computer <br> systems engineer,",
+    "welcome": "Hi ! <br> My name is Jorge <br> I'm a computer <br> systems engineer",
     "btnWelcome": "<i class='uil uil-angle-double-right'></i> Let's get started",
     "titleAboutMe": "About Me",
     "descriptionAboutMe": "Web developer and mobile app developer (React Native) with almost 5 years of experience in the field, frontend and backend, passionate about technology.",
@@ -23,28 +23,28 @@
     "titleExperience": "Professional Experience",
     "experiences": [
         {
-            "company": "Atento",
-            "position": "Bilingual technical support",
-            "duration": "<i class='uil uil-calendar-alt'></i> 2018 - 2019",
-            "description": "I provided technical support to customers in English and Spanish, resolving software and hardware related issues to improve the customer experience."        
+            "company": "Scholastico",
+            "position": "Fullstack Web Developer and Mobile Developer (React Native)",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2021 - Today",
+            "description": "Responsible for the development and maintenance of a travel application using React Native. Participation in the planning and execution of new features to improve the user experience. In addition to creating a new app for the operators, collaborating closely with the design team to ensure the quality and performance of the applications."
+        },
+        {
+            "company": "Freelancer",
+            "position": "Frontend Developer",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2020 - 2021",
+            "description": "Independent work as a frontend developer, collaborating with various clients on customized websites and web apps development projects."
         },
         {
             "company": "Cefodeh",
             "position": "Junior web and mobile developer",
             "duration": "<i class='uil uil-calendar-alt'></i> 2019 - 2020",
-            "description": "Web development and apps. Collaboration in the design, improving the user experience and user interface, as well as creating dashboards for data management."
+            "description": "Web development and web apps. Collaboration in the design, improving the user experience and user interface, as well as creating dashboards for data management."
         },
         {
-            "company": "Freelancer",
-            "position": "Frontend Developer",
-            "duration": "<i class='uil uil-calendar-alt'></i> 2019 - 2021",
-            "description": "Independent work as a developer, collaborating with various clients on customized software development projects."
-        },
-        {
-            "company": "Scholastico",
-            "position": "Fullstack Web Developer and Mobile Developer (React Native)",
-            "duration": "<i class='uil uil-calendar-alt'></i> 2021 - Today",
-            "description": "Responsible for the development and maintenance of a travel application using React Native. Participation in the planning and execution of new features to improve the user experience. In addition to creating a new app for the operators, collaborating closely with the design team to ensure the quality and performance of the applications."
+            "company": "Atento",
+            "position": "Bilingual technical support",
+            "duration": "<i class='uil uil-calendar-alt'></i> 2018 - 2019",
+            "description": "I provided technical support to customers in English and Spanish, resolving software and hardware related issues to improve the customer experience."        
         }
     ],
     "titleKnowledge": "Knowledge",

@@ -378,12 +378,13 @@ header label {
 }
 
 .me a {
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	padding: .25rem 1rem;
+	font-size: 1.2rem;
 	border: 3px solid var(--fluorescentBlueColor);
 	border-radius: 25px;
-	display: inline;
-	padding: .25rem 1rem;
-	font-size: 1.5rem;
-	text-transform: uppercase;
 }
 
 .me a i {
