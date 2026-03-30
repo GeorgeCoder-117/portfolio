@@ -32,7 +32,7 @@ let langBtn = document.querySelector(".language-btn");
 let langActive = "es";
 
 langBtn.addEventListener('click', () => {
-	langBtn.querySelector("p").textContent = langActive === "es" ? "EN" : "ES";
+	langBtn.querySelector("p").textContent = langActive === "es" ? "ES" : "EN";
 	langActive = langActive === "es" ? "en" : "es";
 	i18next.changeLanguage(langActive, (err, t) => {
 		if (err) return console.error('Error cambiando idioma:', err);
